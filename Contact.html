@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fiza Zafar - Portfolio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+  
+.contact-section {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Glass panels */
+.contact-panel {
+  flex: 1 1 420px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 40px;
+  transition: all 0.3s ease;
+}
+
+.contact-panel:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Info Panel */
+.info-panel h5 {
+  color: #06b5c9;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.info-panel h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.info-panel p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.info-details p {
+  margin: 8px 0;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* Form Panel */
+.form-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 10px 0;
+  font-size: 1rem;
+  transition: 0.3s;
+  outline: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #aaa;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #06b5c9;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  top: -12px;
+  font-size: 0.85rem;
+  color: #06b5c9;
+}
+
+button {
+  margin-top: 10px;
+  background: #06b5c9;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+button:hover {
+  background: transparent;
+  color: #06b5c9;
+  border: 1px solid #06b5c9;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .contact-panel {
+    padding: 30px;
+  }
+
+  .info-panel h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-section {
+    padding: 40px 10px;
+  }
+
+  .contact-panel {
+    padding: 25px;
+  }
+
+  .info-panel h2 {
+    font-size: 1.5rem;
+  }
+}
+  
+  /* === Main Footer Styles === */
+
+  #main-footer {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 50px 20px 20px;
+  font-size: 0.95rem;
+  animation: fadeIn 1s ease-in;
+}
+
+/* === Footer Container === */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
+
+/* === Footer Brand Section === */
+.footer-brand h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-brand .accent {
+  color: #00bcd4;
+}
+
+.footer-brand p {
+  color: grey;
+  max-width: 300px;
+}
+
+/* === Footer Links & Contact Titles === */
+.footer-links h3,
+.footer-contact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #00bcd4;
+}
+
+/* === Footer Links === */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00bcd4;
+}
+
+/* === Footer Contact === */
+.footer-contact p {
+  margin-bottom: 10px;
+  color: grey;
+}
+
+.footer-contact a {
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #00bcd4;
+}
+
+/* === Footer Bottom === */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* === Responsive Footer Styles === */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-contact {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .footer-brand p,
+  .footer-contact p {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* === Fade In Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+  
+
+<body>
+  
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">Fiza Zafar</a>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          ☰
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="About.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="Services.html" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="Projects.html" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="Contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<section class="contact-section">
+  <div class="contact-container">
+    
+    <!-- Info Panel -->
+    <div class="contact-panel info-panel">
+      <h5>GET IN TOUCH</h5>
+      <h2>Let's Work Together</h2>
+      <p>We collaborate globally to deliver exceptional results, combining design, innovation, and strategy for every project.</p>
+
+      <div class="info-details">
+        <p><strong>📞</strong> 92 3436637749</p>
+        <p><strong>✉️</strong> zafarfiza17@gmail.com</p>
+        <p><strong>📍</strong> Karachi, Pakistan</p>
+      </div>
+    </div>
+
+    <!-- Form Panel -->
+    <div class="contact-panel form-panel">
+      <form>
+        <div class="input-group">
+          <input type="text" required>
+          <label>Full Name</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" required>
+          <label>Email Address</label>
+        </div>
+
+        <div class="input-group">
+          <input type="text">
+          <label>Subject</label>
+        </div>
+
+        <div class="input-group">
+          <textarea rows="3" required></textarea>
+          <label>Your Message</label>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+  <footer id="main-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>Fiza<span class="accent"> Zafar</span></h2>
+      <p>I build modern, scalable web and mobile solutions tailored to your business needs.
+Trusted by clients worldwide to deliver fast, reliable, and user-focused applications.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="About.html">About Me</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="zafarfiza17@gmail.com">zafarfiza17@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/fiza-zafar-a31183315">https://www.linkedin.com/in/fiza-zafar-a31183315</a></p>
+      <p>Location: Karachi, Pakistan</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 <strong>Fiza Zafar</strong>. All rights reserved.</p>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>    
